@@ -10,7 +10,7 @@ internal sealed class FileHelper : IFileHelper
     {
         DateTime currentTime = DateTime.UtcNow;
         string logFileName = $"{currentTime:yyyyMMdd_hhmmss}_log.txt";
-        _logFilePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Log", logFileName);
+        _logFilePath = Path.Combine(Directory.GetCurrentDirectory(), "Log", logFileName);
         if (!Directory.Exists(Path.GetDirectoryName(_logFilePath)))
         {
             Directory.CreateDirectory(Path.GetDirectoryName(_logFilePath)!);
